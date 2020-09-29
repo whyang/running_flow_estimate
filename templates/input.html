@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+	<header>
+		<div class="container">
+    		<div id="Tianzhong_Marathon">
+    			<h2>跑者人流分析與預測(田中馬2017~2019年模型)</h2>
+    			<h2>以目前(鳴槍後)時間(秒)，通過該感應點(距離)之跑者可能人數(跑者群之高峰期人數_該群50%(眾數)數量</h2>
+    		</div>
+    	</div>
+	</header>
+
+	<div class="ml-container">
+        <form method='post' action={{ url_for('predict') }}>
+            <p>
+                <label for="distance">1. 距離 m (感應點位置)</label>
+                <input type="text" id="distance" name="distance"><br>
+            </p>
+            <p>
+                <label for="score">2. 觀測時間 sec. (目前在感應點時間-鳴槍以後已經跑幾秒)</label>
+                <input type="text" id="score" name="score"><br>
+            </p>
+            <p>
+                <label for="temp">3. 溫度</label>
+                <input type="text" id="temp" name="temp"><br>           
+            </p>
+            <p>
+                <label for="hum">4. 濕度</label>
+                <input type="text" id="hum" name="hum"><br>  
+            </p>
+            <p>
+                <label for="heatindex">5. 熱中暑危險係數</label>
+                <input type="text" id="heatindex" name="heatindex"><br>                     
+            </p>
+            <p>
+                <label for="AQI">6. 空氣品質指標(AQI)</label>
+                <input type="text" id="AQI" name="AQI"><br>  
+            </p>
+            <p>
+                <label for="PM">7. 細懸浮微粒(PM2.5)</label>
+                <input type="text" id="PM" name="PM"><br> 
+            </p>
+            <p>
+                <label for="WR">8. 蒲福風級(幾級風)</label>
+                <input type="text" id="WR" name="WR"><br> 
+            </p>
+            <p>
+                <label for="rain">9. 小時雨量 mm (每小時幾豪米)</label>
+                <input type="text" id="rain" name="rain"><br> 
+            </p>
+            <p>
+                <label for="runner">10. 全馬參賽(或報名)人數 (人)</label>
+                <input type="text" id="runner" name="runner"><br> 
+            </p>
+            <p>
+                <label for="commence_time">11. 鳴槍時間 (秒)</label>
+                <input type="text" id="commence_time" name="commence_time"><br> 
+            </p>
+            <p>
+            <p> <button type='submit' class="btn-info" value="predict">Submit</button> </p>    
+        </form>
+	</div>
+</body>
+
+</html>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>馬拉松跑者人流分析</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+<table id="runner_flow_analysis">
+  <caption>
+      <h2>馬拉松跑者人流分析</h2>
+  </caption>
+  
+  <colgroup>
+    <col span="2" style="background:yellow">
+    <col span="10" style="background:green">
+  </colgroup>
+  
+  <thead>
+    <tr>
+      <th id="prediction_flow">預測人數</th>
+      <th id="distance">距離</th>
+      <th id="prediction_score">觀測時間(鳴槍以後)hh:mm:ss</th>
+      <th id="temp">溫度</th>
+      <th id="hum">濕度</th>
+      <th id="heatindex">熱中暑危險係數</th>
+      <th id="AQI">空氣品質指標</th>
+      <th id="PM">細懸浮微粒</th>
+      <th id="WR">蒲福風級</th>
+      <th id="rain">小時雨量</th>
+      <th id="runner">全馬參賽(或報名)人數</th>
+      <th id="commence_time">鳴槍時間hh:mm:ss</th>
+    </tr>
+  </thead>
+  
+  <tfoot style="color:blue;">
+    <tr>
+      <td colspan="2">傳送完畢</td>
+    </tr>
+  </tfoot>
+  
+  <tbody>
+    <tr>
+      <td headers="prediction_flow">{{ prediction_flow }}</td>
+      <td headers="distance">{{ distance }}</td>
+      <td headers="prediction_score">{{ prediction_score }}</td>
+      <td headers="temp">{{ temp }}</td>
+      <td headers="hum">{{ hum }}</td>
+      <td headers="heatindex">{{ heatindex }}</td>
+      <td headers="AQI">{{ AQI }}</td>
+      <td headers="PM">{{ PM }}</td>
+      <td headers="WR">{{ WR }}</td>
+      <td headers="rain">{{ rain }}</td>
+      <td headers="runner">{{ runner }}</td>
+      <td headers="commence_time">{{ commence_time }}</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
